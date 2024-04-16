@@ -1,0 +1,34 @@
+<odoo>
+    <record id="classroom_from_view" model="ir.ui.view">
+        <field name="name">classroom_model.form</field>
+        <field name="model">classroom_model</field>
+        <field name="arch" type="xml">
+            <form string="Classroom">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="address"/>
+                            <field name="equipment"/>
+                            <field name="type"/>
+                            <field name="capacity"/>
+                            <field name="occupied"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="classroom_action" model="ir.actions.act_window">
+        <field name="name">Classroom</field>
+        <field name="res_model">classroom_model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="timetable_management_menu_root" name="Timetable management">
+    <menuitem id="timetable_management_data_menu" name="Data">
+        <menuitem id="classroom_menu_action" action="classroom_action"/>
+    </menuitem>
+</menuitem>
+</odoo>
