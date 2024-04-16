@@ -6,16 +6,8 @@ class ClassroomModel(models.Model):
     _description = "Classroom Model"
 
     number = fields.Char()
-    address = fields.Text()
-    equipment = fields.Text()
-    # TODO сделать выбираемые значения (selection) для equipment. Проблема в том, что должна быть возможность выбрать
-    #  несколько значений
-    type = fields.Selection(
-        string='Type',
-        selection=[('linguistic', 'Linguistic room (12-20 persons)'),
-                   ('seminar', 'Seminar room (~25 persons)'),
-                   ('seminar', 'Lecture room (>25 persons)'),
-                   ('computer_class', 'Computer class')],
-        help="The type is used to specify the purpose and capacity of the classroom")
+    building = fields.Many2one('building_model')
+    equipment = fields.Many2many('equipment_model')
+    type = fields.Many2one('classroom_type_model')
     capacity = fields.Integer()
     occupied = fields.Boolean()

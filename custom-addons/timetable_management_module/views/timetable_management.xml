@@ -8,7 +8,7 @@
                     <group>
                         <group>
                             <field name="number"/>
-                            <field name="address"/>
+                            <field name="building"/>
                             <field name="equipment"/>
                             <field name="type"/>
                             <field name="capacity"/>
@@ -20,6 +20,20 @@
         </field>
     </record>
 
+    <record id="classroom_tree_view" model="ir.ui.view">
+        <field name="name">classroom_model.tree</field>
+        <field name="model">classroom_model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="number"/>
+                <field name="building"/>
+                <field name="type"/>
+                <field name="capacity"/>
+                <field name="occupied"/>
+            </tree>
+        </field>
+    </record>
+
     <record id="classroom_action" model="ir.actions.act_window">
         <field name="name">Classroom</field>
         <field name="res_model">classroom_model</field>
@@ -27,8 +41,8 @@
     </record>
 
     <menuitem id="timetable_management_menu_root" name="Timetable management">
-    <menuitem id="timetable_management_data_menu" name="Data">
-        <menuitem id="classroom_menu_action" action="classroom_action"/>
+        <menuitem id="timetable_management_data_menu" name="Data">
+            <menuitem id="classroom_menu_action" action="classroom_action"/>
+        </menuitem>
     </menuitem>
-</menuitem>
 </odoo>
