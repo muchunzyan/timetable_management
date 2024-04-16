@@ -1,0 +1,35 @@
+<odoo>
+    <data noupdate="0">
+        <record id="classroom_type_linguistic" model="classroom_type_model">
+            <field name="name">Linguistic room</field>
+            <field name="description">Linguistic room (12-20 persons)</field>
+        </record>
+        <record id="classroom_type_seminar" model="classroom_type_model">
+            <field name="name">Seminar room</field>
+            <field name="description">Seminar room (~25 persons)</field>
+        </record>
+        <record id="classroom_type_lecture" model="classroom_type_model">
+            <field name="name">Lecture room</field>
+            <field name="description">Lecture room (>25 persons)</field>
+        </record>
+        <record id="classroom_type_computer_class" model="classroom_type_model">
+            <field name="name">Computer class</field>
+            <field name="description">Computer class</field>
+        </record>
+    </data>
+
+    <data noupdate="0">
+        <record id="building_pokrovka" model="building_model">
+            <field name="name">Pokrovka</field>
+            <field name="address">11, Pokrovsky Boulevard</field>
+        </record>
+        <record id="building_shabolovka" model="building_model">
+            <field name="name">Shabolovka</field>
+            <field name="address">26, Shabolovka str.</field>
+        </record>
+        <record id="building_b_trekhsvyat" model="building_model">
+            <field name="name">Bolshoy Trisvyat</field>
+            <field name="address">3, Bolshoy Trisvyatitskiy lane</field>
+        </record>
+    </data>
+</odoo>
