@@ -1,1 +1,1 @@
-# timetable_management
+# Timetable management Odoo module
