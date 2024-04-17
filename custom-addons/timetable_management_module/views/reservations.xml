@@ -1,0 +1,40 @@
+<odoo>
+    <record id="reservation_action" model="ir.actions.act_window">
+        <field name="name">Reservations</field>
+        <field name="res_model">reservation_model</field>
+        <field name="view_mode">calendar,form</field>
+    </record>
+
+    <record id="reservation_calendar_view" model="ir.ui.view">
+        <field name="name">reservation_model.calendar</field>
+        <field name="model">reservation_model</field>
+        <field name="arch" type="xml">
+            <calendar string="Reservations" date_start="start_datetime" date_stop="end_datetime" mode="week"
+                      color="reservator">
+                <field name="name"/>
+                <field name="reservator" widget="many2one_avatar_user"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="reservation_from_view" model="ir.ui.view">
+        <field name="name">reservation_model.form</field>
+        <field name="model">reservation_model</field>
+        <field name="arch" type="xml">
+            <form string="Reservation">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="reservator"/>
+                            <field name="start_datetime"/>
+                            <field name="end_datetime"/>
+                            <field name="classroom_id"/>
+                            <field name="reservation_time" readonly="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

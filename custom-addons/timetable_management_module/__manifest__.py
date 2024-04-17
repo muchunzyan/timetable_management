@@ -10,7 +10,9 @@
     'data': [
         'data/data.xml',
         'security/ir.model.access.csv',
-        'views/timetable_management.xml'
+        'views/timetable_management.xml',
+        'views/classrooms.xml',
+        'views/reservations.xml'
     ],
     'demo': [],
     'installable': True,
