@@ -32,4 +32,16 @@
             <field name="address">3, Bolshoy Trisvyatitskiy lane</field>
         </record>
     </data>
+
+    <data noupdate="0">
+        <record id="equipment_projector" model="equipment_model">
+            <field name="name">Projector</field>
+        </record>
+        <record id="equipment_blackboard" model="equipment_model">
+            <field name="name">Blackboard</field>
+        </record>
+        <record id="equipment_flip_chart" model="equipment_model">
+            <field name="name">Flip chart</field>
+        </record>
+    </data>
 </odoo>

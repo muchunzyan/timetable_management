@@ -11,8 +11,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="number"/>
-                <field name="building"/>
-                <field name="type"/>
+                <field name="building_id"/>
+                <field name="type_id"/>
                 <field name="capacity"/>
                 <field name="occupied"/>
             </tree>
@@ -28,9 +28,9 @@
                     <group>
                         <group>
                             <field name="number"/>
-                            <field name="building"/>
-                            <field name="equipment"/>
-                            <field name="type"/>
+                            <field name="building_id"/>
+                            <field name="equipment_ids"/>
+                            <field name="type_id"/>
                             <field name="capacity"/>
                             <field name="occupied"/>
                         </group>
