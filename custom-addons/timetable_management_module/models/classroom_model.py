@@ -5,6 +5,7 @@ from odoo.exceptions import ValidationError
 class ClassroomModel(models.Model):
     _name = "classroom_model"
     _description = "Classroom Model"
+    _rec_name = "number"
 
     number = fields.Char(string="Number")
     cluster_id = fields.Many2one("cluster_model", string="Cluster")
