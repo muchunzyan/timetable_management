@@ -5,8 +5,8 @@ class ReservationModel(models.Model):
     _name = "reservation_model"
     _description = "Reservation Model"
 
-    name = fields.Char(string="Event name")
-    reservator_id = fields.Many2one("res.users", "Reservator")
+    discipline_id = fields.Many2one("discipline_model", string="Discipline")
+    event_type_id = fields.Many2one("event_type_model", string="Event type")
     start_datetime = fields.Datetime(string="Event start")
     end_datetime = fields.Datetime(string="Event end")
     classroom_id = fields.Many2one("classroom_model", "Classroom")

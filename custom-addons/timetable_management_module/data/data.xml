@@ -38,47 +38,36 @@
         <record id="cluster_a" model="cluster_model">
             <field name="name">A</field>
         </record>
-
         <record id="cluster_d" model="cluster_model">
             <field name="name">D</field>
         </record>
-
         <record id="cluster_f" model="cluster_model">
             <field name="name">F</field>
         </record>
-
         <record id="cluster_g" model="cluster_model">
             <field name="name">G</field>
         </record>
-
         <record id="cluster_k" model="cluster_model">
             <field name="name">K</field>
         </record>
-
         <record id="cluster_L" model="cluster_model">
             <field name="name">L</field>
         </record>
-
         <record id="cluster_M" model="cluster_model">
             <field name="name">M</field>
         </record>
-
         <record id="cluster_N" model="cluster_model">
             <field name="name">N</field>
         </record>
-
         <record id="cluster_r" model="cluster_model">
             <field name="name">R</field>
         </record>
-
         <record id="cluster_s" model="cluster_model">
             <field name="name">S</field>
         </record>
-
         <record id="cluster_t" model="cluster_model">
             <field name="name">T</field>
         </record>
-
         <record id="cluster_z" model="cluster_model">
             <field name="name">Z</field>
         </record>
@@ -93,6 +82,33 @@
         </record>
         <record id="equipment_flip_chart" model="equipment_model">
             <field name="name">Flip chart</field>
+        </record>
+    </data>
+<!--disciplines-->
+    <data noupdate="0">
+        <record id="discipline_software_engineering_methodology" model="discipline_model">
+            <field name="name">Software Engineering Methodology</field>
+        </record>
+        <record id="discipline_applied_system_analysis" model="discipline_model">
+            <field name="name">Applied System Analysis</field>
+        </record>
+        <record id="discipline_advanced_software_design" model="discipline_model">
+            <field name="name">Advanced Software Design</field>
+        </record>
+        <record id="discipline_software_business_management" model="discipline_model">
+            <field name="name">Software Business Management</field>
+        </record>
+    </data>
+<!--event_types-->
+    <data noupdate="0">
+        <record id="event_type_lecture" model="event_type_model">
+            <field name="name">Lecture</field>
+        </record>
+        <record id="event_type_seminar" model="event_type_model">
+            <field name="name">Seminar</field>
+        </record>
+        <record id="event_type_consultation" model="event_type_model">
+            <field name="name">Consultation</field>
         </record>
     </data>
 </odoo>

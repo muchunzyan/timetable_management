@@ -10,9 +10,9 @@
         <field name="model">reservation_model</field>
         <field name="arch" type="xml">
             <calendar string="Reservations" date_start="start_datetime" date_stop="end_datetime" mode="week"
-                      quick_add="False" color="reservator_id">
-                <field name="name"/>
-                <field name="reservator_id"/>
+                      quick_add="False" color="discipline_id">
+                <field name="discipline_id"/>
+                <field name="event_type_id"/>
                 <field name="classroom_id"/>
             </calendar>
         </field>
@@ -26,8 +26,8 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name" required="1"/>
-                            <field name="reservator_id" required="1"/>
+                            <field name="discipline_id" required="1"/>
+                            <field name="event_type_id" required="1"/>
                             <field name="start_datetime" required="1"/>
                             <field name="end_datetime" required="1"/>
                             <field name="classroom_id" required="1"/>
