@@ -1,4 +1,5 @@
 <odoo>
+<!--classroom_types-->
     <data noupdate="0">
         <record id="classroom_type_linguistic" model="classroom_type_model">
             <field name="name">Linguistic room</field>
@@ -17,7 +18,7 @@
             <field name="description">Computer class</field>
         </record>
     </data>
-
+<!--buildings-->
     <data noupdate="0">
         <record id="building_pokrovka" model="building_model">
             <field name="name">Pokrovka</field>
@@ -32,7 +33,57 @@
             <field name="address">3, Bolshoy Trisvyatitskiy lane</field>
         </record>
     </data>
+<!--clusters-->
+    <data noupdate="0">
+        <record id="cluster_a" model="cluster_model">
+            <field name="name">A</field>
+        </record>
 
+        <record id="cluster_d" model="cluster_model">
+            <field name="name">D</field>
+        </record>
+
+        <record id="cluster_f" model="cluster_model">
+            <field name="name">F</field>
+        </record>
+
+        <record id="cluster_g" model="cluster_model">
+            <field name="name">G</field>
+        </record>
+
+        <record id="cluster_k" model="cluster_model">
+            <field name="name">K</field>
+        </record>
+
+        <record id="cluster_L" model="cluster_model">
+            <field name="name">L</field>
+        </record>
+
+        <record id="cluster_M" model="cluster_model">
+            <field name="name">M</field>
+        </record>
+
+        <record id="cluster_N" model="cluster_model">
+            <field name="name">N</field>
+        </record>
+
+        <record id="cluster_r" model="cluster_model">
+            <field name="name">R</field>
+        </record>
+
+        <record id="cluster_s" model="cluster_model">
+            <field name="name">S</field>
+        </record>
+
+        <record id="cluster_t" model="cluster_model">
+            <field name="name">T</field>
+        </record>
+
+        <record id="cluster_z" model="cluster_model">
+            <field name="name">Z</field>
+        </record>
+    </data>
+<!--equipments-->
     <data noupdate="0">
         <record id="equipment_projector" model="equipment_model">
             <field name="name">Projector</field>

@@ -27,11 +27,12 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="number"/>
-                            <field name="building_id"/>
+                            <field name="number" required="1"/>
+                            <field name="cluster_id"/>
+                            <field name="building_id" required="1"/>
                             <field name="equipment_ids"/>
-                            <field name="type_id"/>
-                            <field name="capacity"/>
+                            <field name="type_id" required="1"/>
+                            <field name="capacity" required="1"/>
                             <field name="occupied"/>
                         </group>
                     </group>

@@ -4,3 +4,4 @@ access_equipment,access_equipment,model_equipment_model,base.group_user,1,1,1,1
 access_classroom_type,access_classroom_type,model_classroom_type_model,base.group_user,1,1,1,1
 access_building,access_building,model_building_model,base.group_user,1,1,1,1
 access_reservation,access_reservation,model_reservation_model,base.group_user,1,1,1,1
+access_cluster,access_cluster,model_cluster_model,base.group_user,1,1,1,1

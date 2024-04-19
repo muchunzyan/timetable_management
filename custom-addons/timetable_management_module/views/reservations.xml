@@ -26,11 +26,11 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="reservator_id"/>
-                            <field name="start_datetime"/>
-                            <field name="end_datetime"/>
-                            <field name="classroom_id"/>
+                            <field name="name" required="1"/>
+                            <field name="reservator_id" required="1"/>
+                            <field name="start_datetime" required="1"/>
+                            <field name="end_datetime" required="1"/>
+                            <field name="classroom_id" required="1"/>
                             <field name="reservation_time" readonly="True"/>
                         </group>
                     </group>
