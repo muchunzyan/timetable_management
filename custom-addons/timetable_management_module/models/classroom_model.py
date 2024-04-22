@@ -13,8 +13,6 @@ class ClassroomModel(models.Model):
     equipment_ids = fields.Many2many("equipment_model", string="Equipment")
     type_id = fields.Many2one("classroom_type_model", string="Type")
     capacity = fields.Integer(string="Capacity")
-    occupied = fields.Boolean(string="Occupied")
-    # TODO Перенести поле occupied в reservations как проверку
 
     _sql_constraints = [('unique_number', 'unique(number)', 'The classroom with this number already exists')]
 

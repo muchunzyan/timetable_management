@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 
 class ReservationModel(models.Model):
@@ -12,3 +13,45 @@ class ReservationModel(models.Model):
     end_datetime = fields.Datetime(string="Event end")
     classroom_id = fields.Many2one("classroom_model", "Classroom")
     reservation_time = fields.Datetime(default=fields.datetime.now())
+
+    @api.constrains('classroom_id')
+    def _check_classroom_id_is_free(self):
+
+        for record in self:
+            overlapping_class_reservations_interval_1 = (self.env["reservation_model"].search([
+                ("id", "!=", record.id),
+                ("classroom_id", "=", record.classroom_id.id),
+                ("start_datetime", ">", record.start_datetime),
+                ("start_datetime", "<", record.end_datetime)
+            ]))
+            overlapping_class_reservations_interval_2 = (self.env["reservation_model"].search([
+                ("id", "!=", record.id),
+                ("classroom_id", "=", record.classroom_id.id),
+                ("end_datetime", "<", record.start_datetime),
+                ("end_datetime", ">", record.end_datetime)
+            ]))
+            overlapping_class_reservations_interval_3 = (self.env["reservation_model"].search([
+                ("id", "!=", record.id),
+                ("classroom_id", "=", record.classroom_id.id),
+                ("start_datetime", "<", record.start_datetime),
+                ("end_datetime", ">", record.end_datetime)
+            ]))
+            overlapping_class_reservations_interval_4 = (self.env["reservation_model"].search([
+                ("id", "!=", record.id),
+                ("classroom_id", "=", record.classroom_id.id),
+                ("end_datetime", ">", record.start_datetime),
+                ("end_datetime", "<", record.end_datetime)
+            ]))
+
+            overlapping_class_reservations = (overlapping_class_reservations_interval_1 +
+                                              overlapping_class_reservations_interval_2 +
+                                              overlapping_class_reservations_interval_3 +
+                                              overlapping_class_reservations_interval_4)
+
+            for overlapping_class_reservation in overlapping_class_reservations:
+                print(overlapping_class_reservation.classroom_id.id, ":",
+                      overlapping_class_reservation.start_datetime, "-",
+                      overlapping_class_reservation.end_datetime)
+
+            if len(overlapping_class_reservations) > 0:
+                raise ValidationError("The selected classroom is occupied at this time")

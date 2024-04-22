@@ -33,7 +33,6 @@
                             <field name="equipment_ids"/>
                             <field name="type_id" required="1"/>
                             <field name="capacity" required="1"/>
-                            <field name="occupied"/>
                         </group>
                     </group>
                 </sheet>
