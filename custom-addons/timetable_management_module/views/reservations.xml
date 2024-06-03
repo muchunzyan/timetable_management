@@ -10,7 +10,7 @@
         <field name="model">reservation_model</field>
         <field name="arch" type="xml">
             <calendar string="Reservations" date_start="start_datetime" date_stop="end_datetime" mode="week"
-                      quick_add="False" color="discipline_id">
+                      color="discipline_id" event_open_popup="true" quick_create="false">
                 <field name="discipline_id"/>
                 <field name="event_type_id"/>
                 <field name="classroom_id"/>
@@ -18,7 +18,7 @@
         </field>
     </record>
 
-    <record id="reservation_from_view" model="ir.ui.view">
+    <record id="reservation_form_view" model="ir.ui.view">
         <field name="name">reservation_model.form</field>
         <field name="model">reservation_model</field>
         <field name="arch" type="xml">

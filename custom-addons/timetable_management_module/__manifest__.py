@@ -1,12 +1,10 @@
 {
     'name': 'Timetable management',
     'version': '1.0',
-    'category': 'Education',
+    'category': 'Human Resources/Student',
     'description': "Description",
     'author': "Uchunzhyan Mikhail",
-    'depends': [
-        'base',
-    ],
+    'depends': ['base', 'mail', 'student'],
     'data': [
         'data/data.xml',
         'security/ir.model.access.csv',

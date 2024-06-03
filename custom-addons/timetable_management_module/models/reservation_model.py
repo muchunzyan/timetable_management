@@ -1,5 +1,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+from markupsafe import Markup
 
 
 class ReservationModel(models.Model):
@@ -13,6 +14,14 @@ class ReservationModel(models.Model):
     end_datetime = fields.Datetime(string="Event end")
     classroom_id = fields.Many2one("classroom_model", "Classroom")
     reservation_time = fields.Datetime(default=fields.datetime.now())
+
+    @api.model
+    def create(self, vals):
+        message_text = "new reservation created"
+        professor_ids = [1]
+        self.env['utils_model'].send_message('event', Markup(message_text), professor_ids,
+                                             self.env.user.partner_id.id, (str(1), str("name")))
+        return super(ReservationModel, self).create(vals)
 
     @api.constrains('classroom_id')
     def _check_classroom_id_is_free(self):

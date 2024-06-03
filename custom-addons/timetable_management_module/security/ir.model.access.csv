@@ -7,3 +7,4 @@ access_reservation,access_reservation,model_reservation_model,base.group_user,1,
 access_cluster,access_cluster,model_cluster_model,base.group_user,1,1,1,1
 access_discipline,access_discipline,model_discipline_model,base.group_user,1,1,1,1
 access_event_type,access_event_type,model_event_type_model,base.group_user,1,1,1,1
+access_utils,access_utils,model_utils_model,base.group_user,1,1,1,1
