@@ -17,10 +17,27 @@ class ReservationModel(models.Model):
 
     @api.model
     def create(self, vals):
-        message_text = "new reservation created"
-        professor_ids = [1]
-        self.env['utils_model'].send_message('event', Markup(message_text), professor_ids,
-                                             self.env.user.partner_id.id, (str(1), str("name")))
+        discipline = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).name
+        event_type = self.env["event_type_model"].search([("id", "=", vals["event_type_id"])]).name
+        classroom = self.env["classroom_model"].search([("id", "=", vals["classroom_id"])]).number
+
+        start_datetime = str(self.env['utils_model'].to_local_timezone(vals['start_datetime'])).split("+")[0]
+        end_datetime = str(self.env['utils_model'].to_local_timezone(vals['end_datetime'])).split("+")[0]
+
+        date = start_datetime.split(" ")[0]
+        start_time = start_datetime.split(" ")[1]
+        end_time = end_datetime.split(" ")[1]
+
+        message_text = (f"<strong>New reservation created:</strong><br>"
+                        f"{discipline}, {event_type}<br>"
+                        f"Date: {date}<br>"
+                        f"Time: {start_time} - {end_time}<br>"
+                        f"Classroom {classroom}")
+
+        professors = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).professor_ids
+
+        self.env['utils_model'].send_message(Markup(message_text), professors, self.env.user)
+
         return super(ReservationModel, self).create(vals)
 
     @api.constrains('classroom_id')
