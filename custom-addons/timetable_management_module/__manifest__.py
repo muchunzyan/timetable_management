@@ -9,6 +9,7 @@
         'data/data.xml',
         'security/ir.model.access.csv',
         'views/classrooms.xml',
+        'views/disciplines.xml',
         'views/reservations.xml',
         'views/timetable_management.xml'
     ],

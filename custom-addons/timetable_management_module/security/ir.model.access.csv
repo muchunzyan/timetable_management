@@ -1,10 +1,51 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_classroom,access_classroom,model_classroom_model,base.group_user,1,1,1,1
-access_equipment,access_equipment,model_equipment_model,base.group_user,1,1,1,1
-access_classroom_type,access_classroom_type,model_classroom_type_model,base.group_user,1,1,1,1
-access_building,access_building,model_building_model,base.group_user,1,1,1,1
-access_reservation,access_reservation,model_reservation_model,base.group_user,1,1,1,1
-access_cluster,access_cluster,model_cluster_model,base.group_user,1,1,1,1
-access_discipline,access_discipline,model_discipline_model,base.group_user,1,1,1,1
-access_event_type,access_event_type,model_event_type_model,base.group_user,1,1,1,1
-access_utils,access_utils,model_utils_model,base.group_user,1,1,1,1
+
+access_utils,Utilities,model_utils_model,base.group_user,1,1,1,1
+
+access_classroom_admin,Classroom for Administrator,model_classroom_model,student.group_administrator,1,1,1,1
+access_classroom_manager,Classroom for Manager,model_classroom_model,student.group_manager,1,1,1,1
+access_classroom_supervisor,Classroom for Supervisor,model_classroom_model,student.group_supervisor,1,1,1,1
+access_classroom_professor,Classroom for Professor,model_classroom_model,student.group_professor,1,0,0,0
+access_classroom_student,Classroom for Student,model_classroom_model,student.group_student,1,0,0,0
+
+access_equipment_admin,Equipment for Administrator,model_equipment_model,student.group_administrator,1,1,1,1
+access_equipment_manager,Equipment for Manager,model_equipment_model,student.group_manager,1,1,1,1
+access_equipment_supervisor,Equipment for Supervisor,model_equipment_model,student.group_supervisor,1,1,1,1
+access_equipment_professor,Equipment for Professor,model_equipment_model,student.group_professor,1,0,0,0
+access_equipment_student,Equipment for Student,model_equipment_model,student.group_student,1,0,0,0
+
+access_classroom_type_admin,Classroom type for Administrator,model_classroom_type_model,student.group_administrator,1,1,1,1
+access_classroom_type_manager,Classroom type for Manager,model_classroom_type_model,student.group_manager,1,1,1,1
+access_classroom_type_supervisor,Classroom type for Supervisor,model_classroom_type_model,student.group_supervisor,1,1,1,1
+access_classroom_type_professor,Classroom type for Professor,model_classroom_type_model,student.group_professor,1,0,0,0
+access_classroom_type_student,Classroom type for Student,model_classroom_type_model,student.group_student,1,0,0,0
+
+access_building_admin,Building for Administrator,model_building_model,student.group_administrator,1,1,1,1
+access_building_manager,Building for Manager,model_building_model,student.group_manager,1,0,0,0
+access_building_supervisor,Building for Supervisor,model_building_model,student.group_supervisor,1,1,1,1
+access_building_professor,Building for Professor,model_building_model,student.group_professor,1,0,0,0
+access_building_student,Building for Student,model_building_model,student.group_student,1,0,0,0
+
+access_cluster_admin,Cluster for Administrator,model_cluster_model,student.group_administrator,1,1,1,1
+access_cluster_manager,Cluster for Manager,model_cluster_model,student.group_manager,1,0,0,0
+access_cluster_supervisor,Cluster for Supervisor,model_cluster_model,student.group_supervisor,1,1,1,1
+access_cluster_professor,Cluster for Professor,model_cluster_model,student.group_professor,1,0,0,0
+access_cluster_student,Cluster for Student,model_cluster_model,student.group_student,1,0,0,0
+
+access_reservation_admin,Reservation for Administrator,model_reservation_model,student.group_administrator,1,1,1,1
+access_reservation_manager,Reservation for Manager,model_reservation_model,student.group_manager,1,1,1,1
+access_reservation_supervisor,Reservation for Supervisor,model_reservation_model,student.group_supervisor,1,1,1,1
+access_reservation_professor,Reservation for Professor,model_reservation_model,student.group_professor,1,0,0,0
+access_reservation_student,Reservation for Student,model_reservation_model,student.group_student,1,0,0,0
+
+access_discipline_admin,Discipline for Administrator,model_discipline_model,student.group_administrator,1,1,1,1
+access_discipline_manager,Discipline for Manager,model_discipline_model,student.group_manager,1,1,1,1
+access_discipline_supervisor,Discipline for Supervisor,model_discipline_model,student.group_supervisor,1,1,1,1
+access_discipline_professor,Discipline for Professor,model_discipline_model,student.group_professor,1,0,0,0
+access_discipline_student,Discipline for Student,model_discipline_model,student.group_student,1,0,0,0
+
+access_event_type_admin,Event type fro Administrator,model_event_type_model,student.group_administrator,1,1,1,1
+access_event_type_manager,Event type fro Manager,model_event_type_model,student.group_manager,1,1,1,1
+access_event_type_supervisor,Event type fro Supervisor,model_event_type_model,student.group_supervisor,1,1,1,1
+access_event_type_professor,Event type fro Professor,model_event_type_model,student.group_professor,1,0,0,0
+access_event_type_student,Event type fro Student,model_event_type_model,student.group_student,1,0,0,0

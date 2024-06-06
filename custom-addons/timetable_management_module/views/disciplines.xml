@@ -1,0 +1,35 @@
+<odoo>
+    <record id="discipline_action" model="ir.actions.act_window">
+        <field name="name">Disciplines</field>
+        <field name="res_model">discipline_model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="discipline_tree_view" model="ir.ui.view">
+        <field name="name">discipline_model.tree</field>
+        <field name="model">discipline_model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="professor_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="discipline_from_view" model="ir.ui.view">
+        <field name="name">discipline_model.form</field>
+        <field name="model">discipline_model</field>
+        <field name="arch" type="xml">
+            <form string="Discipline">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="1"/>
+                            <field name="professor_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
