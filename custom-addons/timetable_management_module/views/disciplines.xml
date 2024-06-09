@@ -16,7 +16,7 @@
         </field>
     </record>
 
-    <record id="discipline_from_view" model="ir.ui.view">
+    <record id="discipline_form_view" model="ir.ui.view">
         <field name="name">discipline_model.form</field>
         <field name="model">discipline_model</field>
         <field name="arch" type="xml">
@@ -30,6 +30,18 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="discipline_search_view" model="ir.ui.view">
+        <field name="name">discipline_model.search</field>
+        <field name="model">discipline_model</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="My disciplines" name="my_disciplines" domain="[('professor_ids', 'in', uid)]"/>
+                <field name="name"/>
+                <field name="professor_ids"/>
+            </search>
         </field>
     </record>
 </odoo>

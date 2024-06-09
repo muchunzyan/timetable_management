@@ -40,4 +40,19 @@
             </form>
         </field>
     </record>
+
+    <record id="classroom_search_view" model="ir.ui.view">
+        <field name="name">classroom_model.search</field>
+        <field name="model">classroom_model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number"/>
+                <field name="building_id"/>
+                <field name="cluster_id"/>
+                <field name="equipment_ids"/>
+                <field name="type_id"/>
+                <field name="capacity"/>
+            </search>
+        </field>
+    </record>
 </odoo>

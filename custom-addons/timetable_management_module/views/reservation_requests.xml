@@ -44,4 +44,18 @@
             </form>
         </field>
     </record>
+
+    <record id="reservation_request_search_view" model="ir.ui.view">
+        <field name="name">reservation_request_model.search</field>
+        <field name="model">reservation_request_model</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="My reservation requests" name="my_reservation_requests" domain="[('reservator', '=', uid)]"/>
+                <field name="discipline_id"/>
+                <field name="event_type_id"/>
+                <field name="classroom_id"/>
+                <field name="reservator"/>
+            </search>
+        </field>
+    </record>
 </odoo>
