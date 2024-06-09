@@ -44,8 +44,14 @@ access_discipline_supervisor,Discipline for Supervisor,model_discipline_model,st
 access_discipline_professor,Discipline for Professor,model_discipline_model,student.group_professor,1,0,0,0
 access_discipline_student,Discipline for Student,model_discipline_model,student.group_student,1,0,0,0
 
-access_event_type_admin,Event type fro Administrator,model_event_type_model,student.group_administrator,1,1,1,1
-access_event_type_manager,Event type fro Manager,model_event_type_model,student.group_manager,1,1,1,1
-access_event_type_supervisor,Event type fro Supervisor,model_event_type_model,student.group_supervisor,1,1,1,1
-access_event_type_professor,Event type fro Professor,model_event_type_model,student.group_professor,1,0,0,0
-access_event_type_student,Event type fro Student,model_event_type_model,student.group_student,1,0,0,0
+access_event_type_admin,Event type for Administrator,model_event_type_model,student.group_administrator,1,1,1,1
+access_event_type_manager,Event type for Manager,model_event_type_model,student.group_manager,1,1,1,1
+access_event_type_supervisor,Event type for Supervisor,model_event_type_model,student.group_supervisor,1,1,1,1
+access_event_type_professor,Event type for Professor,model_event_type_model,student.group_professor,1,0,0,0
+access_event_type_student,Event type for Student,model_event_type_model,student.group_student,1,0,0,0
+
+access_reservation_request_admin,Reservation request for Administrator,model_reservation_request_model,student.group_administrator,1,1,1,1
+access_reservation_request_manager,Reservation request for Manager,model_reservation_request_model,student.group_manager,1,1,1,1
+access_reservation_request_supervisor,Reservation request for Supervisor,model_reservation_request_model,student.group_supervisor,1,0,0,0
+access_reservation_request_professor,Reservation request for Professor,model_reservation_request_model,student.group_professor,1,1,1,0
+access_reservation_request_student,Reservation request for Student,model_reservation_request_model,student.group_student,0,0,0,0

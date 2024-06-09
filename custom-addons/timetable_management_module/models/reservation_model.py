@@ -14,12 +14,14 @@ class ReservationModel(models.Model):
     end_datetime = fields.Datetime(string="Event end")
     classroom_id = fields.Many2one("classroom_model", "Classroom")
     reservation_time = fields.Datetime(default=fields.datetime.now())
+    reservator = fields.Many2one("res.users", string="Reservator")
 
     @api.model
     def create(self, vals):
         discipline = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).name
         event_type = self.env["event_type_model"].search([("id", "=", vals["event_type_id"])]).name
         classroom = self.env["classroom_model"].search([("id", "=", vals["classroom_id"])]).number
+        vals["reservator"] = self.env.user.id
 
         start_datetime = str(self.env['utils_model'].to_local_timezone(vals['start_datetime'])).split("+")[0]
         end_datetime = str(self.env['utils_model'].to_local_timezone(vals['end_datetime'])).split("+")[0]
@@ -36,7 +38,7 @@ class ReservationModel(models.Model):
 
         professors = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).professor_ids
 
-        self.env['utils_model'].send_message(Markup(message_text), professors, self.env.user)
+        self.env['utils_model'].send_message("reservation", Markup(message_text), professors)
 
         return super(ReservationModel, self).create(vals)
 

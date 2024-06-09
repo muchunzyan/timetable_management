@@ -11,6 +11,7 @@
         'views/classrooms.xml',
         'views/disciplines.xml',
         'views/reservations.xml',
+        'views/reservation_requests.xml',
         'views/timetable_management.xml'
     ],
     'demo': [],

@@ -3,5 +3,6 @@
         <menuitem id="timetable_management_classroom_menu" action="classroom_action"/>
         <menuitem id="timetable_management_discipline_menu" action="discipline_action"/>
         <menuitem id="timetable_management_reservation_menu" action="reservation_action"/>
+        <menuitem id="timetable_management_reservation_request_menu" action="reservation_request_action"/>
     </menuitem>
 </odoo>

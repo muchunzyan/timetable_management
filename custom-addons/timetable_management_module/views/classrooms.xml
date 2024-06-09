@@ -28,8 +28,9 @@
                     <group>
                         <group>
                             <field name="number" required="1"/>
-                            <field name="cluster_id"/>
                             <field name="building_id" required="1"/>
+                            <field name="hide_cluster_id" invisible="1"/>
+                            <field name="cluster_id" required="1" invisible="hide_cluster_id == True"/>
                             <field name="equipment_ids"/>
                             <field name="type_id" required="1"/>
                             <field name="capacity" required="1"/>

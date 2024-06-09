@@ -31,7 +31,6 @@
                             <field name="start_datetime" required="1"/>
                             <field name="end_datetime" required="1"/>
                             <field name="classroom_id" required="1"/>
-                            <field name="reservation_time" readonly="True"/>
                         </group>
                     </group>
                 </sheet>
