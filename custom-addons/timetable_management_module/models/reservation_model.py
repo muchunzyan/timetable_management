@@ -91,6 +91,7 @@ class ReservationModel(models.Model):
 
     @api.model
     def create(self, vals):
+        name = vals["name"]
         discipline = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).name
         event_type = self.env["event_type_model"].search([("id", "=", vals["event_type_id"])]).name
         classroom = self.env["classroom_model"].search([("id", "=", vals["classroom_id"])]).number
@@ -109,11 +110,14 @@ class ReservationModel(models.Model):
         start_time = start_datetime.split(" ")[1]
         end_time = end_datetime.split(" ")[1]
 
-        message_text = (f"<strong>New reservation created:</strong><br>"
-                        f"{discipline}, {event_type}<br>"
-                        f"Date: {date}<br>"
-                        f"Time: {start_time} - {end_time}<br>"
-                        f"Classroom {classroom}")
+        message_text = f"<strong>New reservation created:</strong><br>"
+        if name:
+            message_text += f"{name}<br>"
+        else:
+            message_text += f"{discipline}, {event_type}<br>"
+        message_text += (f"Date: {date}<br>"
+                         f"Time: {start_time} - {end_time}<br>"
+                         f"Classroom: {classroom}<br>")
 
         professors = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).professor_ids
 

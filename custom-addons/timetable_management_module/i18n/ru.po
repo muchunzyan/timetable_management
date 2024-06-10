@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* timetable_management_module
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-10 18:03+0000\n"
+"PO-Revision-Date: 2024-06-10 18:03+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_form_view
+msgid "Accept"
+msgstr "Одобрить"
+
+#. module: timetable_management_module
+#: model:ir.model.fields.selection,name:timetable_management_module.selection__reservation_request_model__status__accepted
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_search_view
+msgid "Accepted"
+msgstr "Одобрено"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__address
+msgid "Address"
+msgstr "Адрес"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__building_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__building_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__building_id
+msgid "Building"
+msgstr "Здание"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_building_model
+msgid "Building Model"
+msgstr "Модель Здание"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__capacity
+msgid "Capacity"
+msgstr "Вместимость"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__classroom_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__classroom_id
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.classroom_from_view
+msgid "Classroom"
+msgstr "Аудитория"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__classroom_ids_to_display
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__classroom_ids_to_display
+msgid "Classroom IDs to display"
+msgstr "Идентификаторы аудиторий для отображения"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_classroom_model
+msgid "Classroom Model"
+msgstr "Модель Аудитория"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_classroom_type_model
+msgid "Classroom Type Model"
+msgstr "Модель Тип аудитории"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__classroom_can_be_reserved
+msgid "Classroom can be reserved"
+msgstr "Аудитория может быть забронирована"
+
+#. module: timetable_management_module
+#: model:ir.actions.act_window,name:timetable_management_module.classroom_action
+#: model:ir.ui.menu,name:timetable_management_module.timetable_management_classroom_menu
+msgid "Classrooms"
+msgstr "Аудитории"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__cluster_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__name
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__cluster_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__cluster_id
+msgid "Cluster"
+msgstr "Кластер"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_cluster_model
+msgid "Cluster Model"
+msgstr "Модель Кластер"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__create_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__create_uid
+msgid "Created by"
+msgstr "Создано"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__create_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__create_date
+msgid "Created on"
+msgstr "Создано"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_form_view
+msgid "Decline"
+msgstr "Отклонить"
+
+#. module: timetable_management_module
+#: model:ir.model.fields.selection,name:timetable_management_module.selection__reservation_request_model__status__declined
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_search_view
+msgid "Declined"
+msgstr "Отклонено"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__description
+msgid "Description"
+msgstr "Описание"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__discipline_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__discipline_id
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.discipline_form_view
+msgid "Discipline"
+msgstr "Дисциплина"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_discipline_model
+msgid "Discipline Model"
+msgstr "Модель Дисциплина"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__name
+msgid "Discipline Name"
+msgstr "Название дисциплины"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__is_discipline_related
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__is_discipline_related
+msgid "Discipline-related reservation"
+msgstr "Бронирование, связанное с дисциплиной"
+
+#. module: timetable_management_module
+#: model:ir.actions.act_window,name:timetable_management_module.discipline_action
+#: model:ir.ui.menu,name:timetable_management_module.timetable_management_discipline_menu
+msgid "Disciplines"
+msgstr "Дисциплины"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__display_name
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__display_name
+msgid "Display Name"
+msgstr "Отображаемое имя"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__equipment_ids
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__equipment_ids
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__equipment_ids
+msgid "Equipment"
+msgstr "Оборудование"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_equipment_model
+msgid "Equipment Model"
+msgstr "Модель Оборудование"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_event_type_model
+msgid "Event Type Model"
+msgstr "Модель Тип события"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__end_datetime
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__end_datetime
+msgid "Event end"
+msgstr "Окончание события"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__start_datetime
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__start_datetime
+msgid "Event start"
+msgstr "Начало события"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__event_type_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__event_type_id
+msgid "Event type"
+msgstr "Тип события"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__hide_cluster_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__hide_cluster_id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__hide_cluster_id
+msgid "Hide Cluster field"
+msgstr "Скрыть поле Кластер"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__id
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__id
+msgid "ID"
+msgstr "Идентификатор"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__write_uid
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__write_uid
+msgid "Last Updated by"
+msgstr "Последнее обновление сделано"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_building_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_cluster_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__write_date
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__write_date
+msgid "Last Updated on"
+msgstr "Последнее обновление"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.discipline_search_view
+msgid "My disciplines"
+msgstr "Мои дисциплины"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_search_view
+msgid "My reservation requests"
+msgstr "Мои запросы на бронирование"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_search_view
+msgid "My reservations"
+msgstr "Мои бронирования"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_type_model__name
+#: model:ir.model.fields,field_description:timetable_management_module.field_equipment_model__name
+#: model:ir.model.fields,field_description:timetable_management_module.field_event_type_model__name
+msgid "Name"
+msgstr "Имя"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__number
+msgid "Number"
+msgstr "Номер"
+
+#. module: timetable_management_module
+#: model:ir.model.fields.selection,name:timetable_management_module.selection__reservation_request_model__status__pending
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_search_view
+msgid "Pending"
+msgstr "В ожидании"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__professor_ids
+msgid "Professors"
+msgstr "Профессоры"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_form_view
+msgid "Reservation"
+msgstr "Бронирование"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_reservation_model
+msgid "Reservation Model"
+msgstr "Модель Бронирование"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__reservation_request_time
+msgid "Reservation Request Time"
+msgstr "Время запроса на бронирование"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__reservation_time
+msgid "Reservation Time"
+msgstr "Время бронирования"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__name
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__name
+msgid "Reservation name"
+msgstr "Название бронирования"
+
+#. module: timetable_management_module
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_form_view
+msgid "Reservation request"
+msgstr "Запрос на бронирование"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_reservation_request_model
+msgid "Reservation request Model"
+msgstr "Моель Запрос на бронирование"
+
+#. module: timetable_management_module
+#: model:ir.actions.act_window,name:timetable_management_module.reservation_request_action
+#: model:ir.ui.menu,name:timetable_management_module.timetable_management_reservation_request_menu
+msgid "Reservation requests"
+msgstr "Запросы на бронирование"
+
+#. module: timetable_management_module
+#: model:ir.actions.act_window,name:timetable_management_module.reservation_action
+#: model:ir.ui.menu,name:timetable_management_module.timetable_management_reservation_menu
+#: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_calendar_view
+msgid "Reservations"
+msgstr "Бронирования"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_model__reservator
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__reservator
+msgid "Reservator"
+msgstr "Бронирующий"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_reservation_request_model__status
+msgid "Status"
+msgstr "Статус"
+
+#. module: timetable_management_module
+#: model:ir.model.constraint,message:timetable_management_module.constraint_classroom_model_unique_number
+msgid "The classroom with this number already exists"
+msgstr "Аудитория с таким номером уже существует"
+
+#. module: timetable_management_module
+#: model:ir.ui.menu,name:timetable_management_module.timetable_management_menu_root
+msgid "Timetable management"
+msgstr "Управление расписанием"
+
+#. module: timetable_management_module
+#: model:ir.model.fields,field_description:timetable_management_module.field_classroom_model__type_id
+msgid "Type"
+msgstr "Тип"
+
+#. module: timetable_management_module
+#: model:ir.model,name:timetable_management_module.model_utils_model
+msgid "Utility Methods"
+msgstr "Утилитарные методы"

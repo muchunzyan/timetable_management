@@ -59,7 +59,7 @@ class ReservationRequestModel(models.Model):
                 'reservator': record.reservator.id,
             })
 
-            _send_reservation_created_notification(self, record.discipline_id.id, record.event_type_id.id,
+            _send_reservation_created_notification(self, record.name, record.discipline_id.id, record.event_type_id.id,
                                                    record.start_datetime, record.end_datetime, record.classroom_id.id)
 
     def action_decline(self):
@@ -137,6 +137,7 @@ class ReservationRequestModel(models.Model):
 
     @api.model
     def create(self, vals):
+        name = vals["name"]
         discipline = self.env["discipline_model"].search([("id", "=", vals["discipline_id"])]).name
         event_type = self.env["event_type_model"].search([("id", "=", vals["event_type_id"])]).name
         classroom = self.env["classroom_model"].search([("id", "=", vals["classroom_id"])]).number
@@ -155,12 +156,15 @@ class ReservationRequestModel(models.Model):
         start_time = start_datetime.split(" ")[1]
         end_time = end_datetime.split(" ")[1]
 
-        message_text = (f"<strong>New reservation request created:</strong><br>"
-                        f"{discipline}, {event_type}<br>"
-                        f"Date: {date}<br>"
-                        f"Time: {start_time} - {end_time}<br>"
-                        f"Classroom: {classroom}<br>"
-                        f"Reservator: {self.env.user.name}")
+        message_text = f"<strong>New reservation request created:</strong><br>"
+        if name:
+            message_text += f"{name}<br>"
+        else:
+            message_text += f"{discipline}, {event_type}<br>"
+        message_text += (f"Date: {date}<br>"
+                         f"Time: {start_time} - {end_time}<br>"
+                         f"Classroom: {classroom}<br>"
+                         f"Reservator: {self.env.user.name}")
 
         self.env['utils_model'].send_message("notify_managers", Markup(message_text), [])
 
@@ -185,7 +189,7 @@ def _send_reservation_status_change_notification(self, start_datetime, end_datet
     self.env['utils_model'].send_message("notify_reservator", Markup(message_text), [reservator])
 
 
-def _send_reservation_created_notification(self, discipline_id, event_type_id, start_datetime, end_datetime,
+def _send_reservation_created_notification(self, name, discipline_id, event_type_id, start_datetime, end_datetime,
                                            classroom_id):
     discipline = self.env["discipline_model"].search([("id", "=", discipline_id)]).name
     event_type = self.env["event_type_model"].search([("id", "=", event_type_id)]).name
@@ -197,11 +201,14 @@ def _send_reservation_created_notification(self, discipline_id, event_type_id, s
     start_time = start_datetime.split(" ")[1]
     end_time = end_datetime.split(" ")[1]
 
-    message_text = (f"<strong>New reservation created:</strong><br>"
-                    f"{discipline}, {event_type}<br>"
-                    f"Date: {date}<br>"
-                    f"Time: {start_time} - {end_time}<br>"
-                    f"Classroom {classroom}")
+    message_text = f"<strong>New reservation created:</strong><br>"
+    if name:
+        message_text += f"{name}<br>"
+    else:
+        message_text += f"{discipline}, {event_type}<br>"
+    message_text += (f"Date: {date}<br>"
+                     f"Time: {start_time} - {end_time}<br>"
+                     f"Classroom: {classroom}<br>")
 
     professors = self.env["discipline_model"].search([("id", "=", discipline_id)]).professor_ids
 

@@ -15,6 +15,7 @@ class UtilsModel(models.AbstractModel):
         admin = admins_group.users[0]
 
         if notification_type == "notify_reservator":
+            print("recipients:", recipients)
             for recipient in recipients:
                 channel_name = f"{recipient.name} reservations"
 
@@ -28,17 +29,21 @@ class UtilsModel(models.AbstractModel):
                         'display_name': channel_name
                     })
 
+                    channel.write({'channel_partner_ids': [(3, self.env.user.id)]})
+
                 channel.sudo().message_post(
                     body=Markup(message_text),
                     author_id=admin.id,
                     message_type="comment",
                     subtype_xmlid='mail.mt_comment'
                 )
+                return
         elif notification_type == "notify_managers":
             managers_group = self.env.ref('student.group_manager')
             managers = managers_group.users
 
             if managers:
+                print("managers:", managers)
                 for recipient in managers:
                     channel_name = "Reservation requests"
                     channel = self.env['discuss.channel'].sudo().search([('name', '=', channel_name)], limit=1)
@@ -51,12 +56,15 @@ class UtilsModel(models.AbstractModel):
                             'display_name': channel_name
                         })
 
+                        channel.write({'channel_partner_ids': [(3, self.env.user.id)]})
+
                     channel.sudo().message_post(
                         body=Markup(message_text),
                         author_id=admin.id,
                         message_type="comment",
                         subtype_xmlid='mail.mt_comment'
                     )
+                    return
 
     def to_local_timezone(self, date):
         datetime_format = "%Y-%m-%d %H:%M:%S"
