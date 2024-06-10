@@ -10,9 +10,11 @@
         <field name="model">reservation_request_model</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
                 <field name="classroom_id"/>
                 <field name="reservator"/>
+                <field name="start_datetime"/>
+                <field name="end_datetime"/>
+                <field name="status"/>
             </tree>
         </field>
     </record>
@@ -22,22 +24,35 @@
         <field name="model">reservation_request_model</field>
         <field name="arch" type="xml">
             <form string="Reservation request">
+                <header>
+                    <button name="action_accept" type="object" string="Accept" class="btn btn-success" invisible="status != 'pending'" groups="student.group_administrator,student.group_manager,student.group_supervisor"/>
+                    <button name="action_decline" type="object" string="Decline" class="btn btn-danger" invisible="status != 'pending'" groups="student.group_administrator,student.group_manager,student.group_supervisor"/>
+                </header>
                 <sheet>
                     <group>
                         <group>
-                            <field name="name" required="1"/>
+                            <field name="is_discipline_related" required="1"/>
+                            <field name="name" required="1" invisible="is_discipline_related == True"/>
+                            <field name="discipline_id" required="1" invisible="is_discipline_related == False"/>
+                            <field name="event_type_id" required="1" invisible="is_discipline_related == False"/>
+                        </group>
+                        <group>
                             <field name="building_id" required="1"/>
                             <field name="hide_cluster_id" invisible="1"/>
                             <field name="cluster_id" required="1" invisible="hide_cluster_id == True"/>
+                        </group>
+                        <group>
                             <field name="start_datetime" required="1"/>
                             <field name="end_datetime" required="1"/>
                             <field name="equipment_ids" required="0"/>
-
+                        </group>
+                        <group>
                             <field name="classroom_ids_to_display" invisible="1"/>
                             <field name="classroom_id" required="1"/>
-
-                            <field name="discipline_id" required="0"/>
-                            <field name="event_type_id" required="0"/>
+                        </group>
+                        <group>
+                            <field name="classroom_can_be_reserved" readonly="1" invisible="1"/>
+                            <field name="status" readonly="1"/>
                         </group>
                     </group>
                 </sheet>
@@ -51,10 +66,15 @@
         <field name="arch" type="xml">
             <search>
                 <filter string="My reservation requests" name="my_reservation_requests" domain="[('reservator', '=', uid)]"/>
+                <filter string="Accepted" name="accepted" domain="[('status', '=', 'accepted')]"/>
+                <filter string="Declined" name="declined" domain="[('status', '=', 'declined')]"/>
+                <filter string="Pending" name="pending" domain="[('status', '=', 'pending')]"/>
+                <field name="name"/>
                 <field name="discipline_id"/>
                 <field name="event_type_id"/>
                 <field name="classroom_id"/>
                 <field name="reservator"/>
+                <field name="status"/>
             </search>
         </field>
     </record>

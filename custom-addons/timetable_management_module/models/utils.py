@@ -4,20 +4,17 @@ import pytz
 from odoo import api, models
 from markupsafe import Markup
 
-ADMINS_GROUP_ID = "17"
-MANAGERS_GROUP_ID = "34"
-
 
 class UtilsModel(models.AbstractModel):
     _name = 'utils_model'
     _description = 'Utility Methods'
 
     @api.model
-    def send_message(self, event, message_text, recipients):
-        admins_group = (self.env['res.groups'].search([('id', '=', ADMINS_GROUP_ID)]))
+    def send_message(self, notification_type, message_text, recipients):
+        admins_group = self.env.ref('student.group_administrator')
         admin = admins_group.users[0]
 
-        if event == "reservation":
+        if notification_type == "notify_reservator":
             for recipient in recipients:
                 channel_name = f"{recipient.name} reservations"
 
@@ -37,10 +34,9 @@ class UtilsModel(models.AbstractModel):
                     message_type="comment",
                     subtype_xmlid='mail.mt_comment'
                 )
-        elif event == "reservation_request":
-            managers_group = (self.env['res.groups'].search([('id', '=', MANAGERS_GROUP_ID)]))
+        elif notification_type == "notify_managers":
+            managers_group = self.env.ref('student.group_manager')
             managers = managers_group.users
-            print(managers)
 
             if managers:
                 for recipient in managers:

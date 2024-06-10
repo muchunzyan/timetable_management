@@ -11,6 +11,5 @@ class DisciplineModel(models.Model):
 
     @api.model
     def _get_professor_domain(self):
-        # Reference the Professor group
         professor_group = self.env.ref('student.group_professor')
         return [('groups_id', 'in', professor_group.id)]
