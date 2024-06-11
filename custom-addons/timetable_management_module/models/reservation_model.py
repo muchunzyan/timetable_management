@@ -7,7 +7,12 @@ class ReservationModel(models.Model):
     _description = "Reservation Model"
     _rec_name = "classroom_id"
 
+    is_discipline_related = fields.Boolean(string='Discipline-related reservation')
+
     name = fields.Char("Reservation name")
+    discipline_id = fields.Many2one("discipline_model", string="Discipline")
+    event_type_id = fields.Many2one("event_type_model", string="Event type")
+
     building_id = fields.Many2one("building_model", string="Building")
     hide_cluster_id = fields.Boolean(string='Hide Cluster field', compute='_compute_hide_cluster_id', store=False)
     cluster_id = fields.Many2one("cluster_model", string="Cluster")
@@ -19,10 +24,6 @@ class ReservationModel(models.Model):
                                                 compute='_compute_classroom_ids_to_display', store=False)
     classroom_id = fields.Many2one("classroom_model", "Classroom",
                                    domain="[('id', 'in', classroom_ids_to_display)]")
-
-    is_discipline_related = fields.Boolean(string='Discipline-related reservation')
-    discipline_id = fields.Many2one("discipline_model", string="Discipline")
-    event_type_id = fields.Many2one("event_type_model", string="Event type")
 
     reservation_time = fields.Datetime(default=fields.datetime.now())
     reservator = fields.Many2one("res.users", string="Reservator")

@@ -6,4 +6,4 @@ class ClassroomTypeModel(models.Model):
     _description = "Classroom Type Model"
 
     name = fields.Char()
-    description = fields.Char()
+    description = fields.Text()
