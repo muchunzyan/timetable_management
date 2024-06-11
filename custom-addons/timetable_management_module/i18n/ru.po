@@ -291,7 +291,7 @@ msgstr "Номер"
 #: model:ir.model.fields.selection,name:timetable_management_module.selection__reservation_request_model__status__pending
 #: model_terms:ir.ui.view,arch_db:timetable_management_module.reservation_request_search_view
 msgid "Pending"
-msgstr "В ожидании"
+msgstr "На рассмотрении"
 
 #. module: timetable_management_module
 #: model:ir.model.fields,field_description:timetable_management_module.field_discipline_model__professor_ids

@@ -60,7 +60,8 @@ class ReservationRequestModel(models.Model):
             })
 
             _send_reservation_created_notification(self, record.name, record.discipline_id.id, record.event_type_id.id,
-                                                   record.start_datetime, record.end_datetime, record.classroom_id.id)
+                                                   record.start_datetime, record.end_datetime, record.classroom_id.id,
+                                                   record.reservator)
 
     def action_decline(self):
         self.write({'status': 'declined'})
@@ -190,7 +191,7 @@ def _send_reservation_status_change_notification(self, start_datetime, end_datet
 
 
 def _send_reservation_created_notification(self, name, discipline_id, event_type_id, start_datetime, end_datetime,
-                                           classroom_id):
+                                           classroom_id, reservator):
     discipline = self.env["discipline_model"].search([("id", "=", discipline_id)]).name
     event_type = self.env["event_type_model"].search([("id", "=", event_type_id)]).name
     classroom = self.env["classroom_model"].search([("id", "=", classroom_id)]).number
@@ -211,5 +212,9 @@ def _send_reservation_created_notification(self, name, discipline_id, event_type
                      f"Classroom: {classroom}<br>")
 
     professors = self.env["discipline_model"].search([("id", "=", discipline_id)]).professor_ids
+    print(professors)
+    print(reservator)
+    if reservator not in professors:
+        professors = [professors, reservator]
 
     self.env['utils_model'].send_message("notify_reservator", Markup(message_text), professors)
