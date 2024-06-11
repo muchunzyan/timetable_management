@@ -1,7 +1,7 @@
 # Timetable management Odoo module
 
 ## Description
-This module for Odoo 17 offers a solution to solve complex scheduling and resource management challenges faced by educational institutions. Utilizing the capabilities of the Odoo platform, this project aims to create a dynamic and user-friendly system that can meet the diverse needs of students, teachers and management staff. Key features include the management of classrooms as basic structural units, with attributes such as capacity, address, equipment and type. User roles are defined for students, teachers, managers and guests, each with individual access to information and functionality. The system allows managers to schedule classes and book classrooms on demand for faculty members, facilitating communication between them. 
+This module for Odoo 17 offers a solution to solve complex scheduling and resource management challenges faced by educational institutions. Utilizing the capabilities of the Odoo platform, this project aims to create a dynamic and user-friendly system that can meet the diverse needs of students, teachers and management staff. Key features include the management of classrooms as basic structural units, with attributes such as capacity, address, equipment and type. User roles are defined for administrators, managers, supervisors, professors, students and guests, each with individual access to information and functionality. The system allows managers to schedule classes and book classrooms on demand for faculty members, facilitating communication between them. 
 
 ## Installation
 To run the project:
